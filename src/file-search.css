@@ -1,0 +1,38 @@
+.filters.file-search {
+  grid-template-columns: minmax(240px, 1fr) auto auto;
+}
+
+.file-search input[type="search"] {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+  border: 1px solid var(--line);
+  padding: 10px;
+  background: #fff;
+}
+
+.browse-button {
+  align-self: end;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 10px 18px;
+  color: var(--ink) !important;
+  background: #fff;
+  font-size: 13px !important;
+  text-transform: none !important;
+  cursor: pointer;
+}
+
+.primary:disabled {
+  opacity: .45;
+  cursor: not-allowed;
+}
+
+.lecture.selected {
+  border-color: var(--green);
+  box-shadow: inset 3px 0 var(--green);
+}
+
+@media (max-width: 800px) {
+  .filters.file-search { grid-template-columns: 1fr; }
+}
