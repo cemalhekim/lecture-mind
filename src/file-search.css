@@ -16,10 +16,9 @@
   border: 1px solid var(--line);
   border-radius: 4px;
   padding: 10px 18px;
-  color: var(--ink) !important;
+  color: var(--ink);
   background: #fff;
-  font-size: 13px !important;
-  text-transform: none !important;
+  font-size: 13px;
   cursor: pointer;
 }
 

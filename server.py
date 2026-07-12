@@ -26,6 +26,10 @@ def refresh_catalog():
     if rows: CATALOG[:]=sorted(rows,key=lambda x:(x["semester"],x["module"],x["title"]))
 
 class Handler(SimpleHTTPRequestHandler):
+    def end_headers(self):
+        self.send_header("Cache-Control","no-store")
+        super().end_headers()
+
     def json(self,data,status=200):
         raw=json.dumps(data,ensure_ascii=False).encode(); self.send_response(status); self.send_header("Content-Type","application/json; charset=utf-8"); self.send_header("Content-Length",str(len(raw))); self.end_headers(); self.wfile.write(raw)
     def do_GET(self):
