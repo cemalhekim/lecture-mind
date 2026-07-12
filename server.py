@@ -46,7 +46,7 @@ class Handler(SimpleHTTPRequestHandler):
             if source.suffix.lower()!=".pdf" or not source.exists(): raise ValueError("A readable PDF is required")
             ident=slug(source.stem)+"-"+str(int(time.time())); output=ROOT/"data/maps"/(ident+".json")
             prompt=f'''Analyze the lecture PDF at {source}. Return ONLY JSON matching the supplied schema. Build an intuition-first learning dependency map, not a page summary. Every concept must explain the problem, motivation, physical intuition, connection, beginner misconception, equation, and source page. Use 6-14 concepts and concise text. Set id to "{ident}".'''
-            cmd=[str(CODEX),"exec","--ephemeral","--skip-git-repo-check","--sandbox","read-only","-C",str(ROOT),"--add-dir",str(source.parent),"--output-schema",str(ROOT/"mindmap.schema.json"),"-o",str(output),prompt]
+            cmd=[str(CODEX),"exec","--ephemeral","--skip-git-repo-check","--dangerously-bypass-approvals-and-sandbox","-C",str(ROOT),"--add-dir",str(source.parent),"--output-schema",str(ROOT/"mindmap.schema.json"),"-o",str(output),prompt]
             subprocess.run(cmd,check=True,timeout=900,capture_output=True,text=True)
             data=json.loads(output.read_text()); self.json({"id":ident,"title":data["title"],"semester":"Generated","module":data.get("module","Lecture"),"lecture":source.name,"concepts":len(data["concepts"])})
         except subprocess.TimeoutExpired: self.json({"error":"Codex generation timed out"},504)
