@@ -1,0 +1,21 @@
+.DS_Store
+
+# Personal lecture files and imported documents
+assets/
+imports/
+
+# Locally generated maps, diagrams, and job output
+data/maps/
+generated/
+jobs/
+
+# Legacy locally generated single-lecture demo
+map.html
+src/app.js
+
+# Local configuration and Python artifacts
+.env
+.env.*
+!.env.example
+__pycache__/
+*.py[cod]

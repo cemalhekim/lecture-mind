@@ -1,0 +1,9 @@
+#canvas, #canvas *, #canvas svg, #canvas text {
+  -webkit-user-select: none !important;
+  user-select: none !important;
+  -webkit-user-drag: none;
+}
+#canvas ::selection { background: transparent; }
+#canvas .node .accent { fill: #2b6b50; stroke: none; }
+#canvas .node .f { font-family: Georgia, serif; font-size: 10px; fill: #36443d; }
+#canvas .edge { stroke-linejoin: round; stroke-linecap: round; }

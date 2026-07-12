@@ -1,0 +1,24 @@
+.map-viewport svg { width: 1810px; height: 760px; }
+.edge { stroke: #9eaaa3; }
+.edge-label-bg { fill: #f3f4ef; stroke: none; }
+.edge-label { fill: #526159; font-weight: 700; text-anchor: middle; }
+.empty-state { pointer-events: none; }
+.empty-state[hidden] { display: none; }
+.map-panel, .map-viewport { min-height: 0; }
+.map-viewport { cursor: grab; overscroll-behavior: contain; user-select: none; }
+.map-viewport,
+.map-viewport *,
+.map-viewport svg,
+.map-viewport text {
+  -webkit-user-select: none !important;
+  user-select: none !important;
+  -webkit-user-drag: none;
+}
+.map-viewport ::selection { background: transparent; }
+.map-viewport.is-panning { cursor: grabbing; user-select: none; }
+.map-viewport .node { cursor: pointer; }
+.inspector, .inspector * { -webkit-user-select: text; user-select: text; }
+.topbar { gap: 18px; }
+.main-page-link { flex: 0 0 auto; color: #f0c85e; text-decoration: none; font-size: 11px; font-weight: 750; padding-right: 18px; border-right: 1px solid rgba(255,255,255,.24); }
+.main-page-link:hover { color: #fff; }
+@media (max-width: 720px) { .map-viewport svg { width: 1810px; height: 760px; } }

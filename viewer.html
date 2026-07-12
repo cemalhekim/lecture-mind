@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>LectureMind Viewer</title>
+  <link rel="stylesheet" href="src/viewer.css">
+  <link rel="stylesheet" href="src/canvas-lock.css">
+</head>
+<body>
+  <header><a href="index.html">← Main page</a><div><small>GENERATED LEARNING MAP</small><h1 id="title">Loading…</h1></div><button id="fit">Fit</button></header>
+  <main><div id="canvas"><svg id="map"></svg></div><aside><span id="index">01</span><small id="category"></small><h2 id="concept"></h2><p class="lead" id="motivation"></p><section><b>Problem it solves</b><p id="problem"></p></section><section><b>Physical intuition</b><p id="intuition"></p></section><section class="next"><b>Why it comes next</b><p id="connection"></p></section><section class="warning"><b>Common misconception</b><p id="misconception"></p></section><pre id="equation"></pre><p id="note"></p></aside></main>
+  <script src="src/viewer.js"></script>
+</body>
+</html>
